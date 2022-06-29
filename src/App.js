@@ -1,18 +1,16 @@
-import Home from "./pages/Home";
-// context
-import ColorContext from "./context/ColorContext";
+// import { useState, useEffect } from "react";
+
+// components
+import AddUser from "./components/AddUser";
+import UserList from "./components/UserList";
 
 function App() {
 
-  // variable
-  const color = "red";
-
   return (
-    <ColorContext.Provider value={ color }>
-      <div>
-        <Home />
-      </div>
-    </ColorContext.Provider>
+    <>
+      <AddUser />
+      <UserList />
+    </>
   );
 }
 
