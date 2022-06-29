@@ -1,7 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Section from './Section';
-// context
-import ColorContext from '../context/ColorContext';
 
 export default function Home() {
   return (
