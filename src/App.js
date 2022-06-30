@@ -16,6 +16,9 @@ function App() {
   // user event function
   const dispatchUserEvent = (actionType, payload) => {
     switch(actionType) {
+      case 'Add_user':
+        setUsers([...users, payload]);
+        return;
       case 'Remover_user':
         setUsers(users.filter( user => user.id !== payload.userId));
         return;
