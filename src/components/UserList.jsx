@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Container, Row } from 'react-bootstrap';
+import EditUser from './EditUser';
 
 // context
 import { AppContext } from '../context/context';
@@ -8,7 +9,7 @@ import User from './User';
 export default function UserList() {
 
   // useContext
-  const { users } = useContext(AppContext);
+  const { users, showEditModal } = useContext(AppContext);
 
   return (
     <section className='pt-3 pb-4'>
@@ -23,6 +24,10 @@ export default function UserList() {
 
         </Row>
       </Container>
+
+      {/* modal comonent */}
+      { showEditModal ? <EditUser /> : '' }
+
     </section>
   )
 }

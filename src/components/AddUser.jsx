@@ -16,6 +16,11 @@ export default function AddUser() {
   // onsubmit form
   const submitNew = () => {
     dispatchUserEvent('Add_user', { id: Math.random(), name, age, bio } );
+
+    // reset state
+    setName('');
+    setage('');
+    setbio('');
   }
 
   return (
@@ -37,7 +42,7 @@ export default function AddUser() {
 
                 <Form.Group className="mb-2">
                   <Form.Label>Bio</Form.Label>
-                  <Form.Control as="textarea" bio={bio} onChange={(e) => {setbio(e.target.value)}} rows={3} placeholder="Bio..." />
+                  <Form.Control as="textarea" value={bio} onChange={(e) => {setbio(e.target.value)}} rows={3} placeholder="Bio..." />
                 </Form.Group>
 
                 <Button variant="success" onClick={ submitNew }>Add User</Button>
